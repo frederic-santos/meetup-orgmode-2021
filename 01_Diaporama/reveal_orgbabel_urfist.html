@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Une introduction à Emacs et Org mode</title>
+<meta name="author" content="(Frédéric Santos)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="/home/fsantos/PACEA_MyCore/Logiciels/reveal_js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="/home/fsantos/PACEA_MyCore/Logiciels/reveal_js/dist/theme/sky.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = '/home/fsantos/PACEA_MyCore/Logiciels/reveal_js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<meta name="description" content="Une introduction à Emacs et Org mode.">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Une introduction à Emacs et Org mode</h1><h2 class="author">Frédéric Santos</h2><h2 class="email"><a href="mailto:frederic.santos@u-bordeaux.fr">frederic.santos@u-bordeaux.fr</a></h2><h2 class="date">Lundi 3 mai 2021</h2>
+</section>
+
+<section>
+<section id="slide-org5a25ee8">
+<h2 id="org5a25ee8">Organisation du meetup</h2>
+</section>
+</section>
+<section>
+<section id="slide-orgaff12e6">
+<h3 id="orgaff12e6">Programme</h3>
+<ul>
+<li>(Re)découverte d&rsquo;Emacs</li>
+<li>Généralités sur Org mode</li>
+<li>Démo : rédiger un document Org et l&rsquo;exporter en de multiples formats</li>
+<li>Démo : un exemple simple d&rsquo;utilisation d&rsquo;Org mode comme &ldquo;planificateur du quotidien&rdquo;</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org8ddf410">
+<h3 id="org8ddf410">Approche</h3>
+<ul>
+<li>Approche principale : Org mode comme langage de balisage léger, et système d&rsquo;export universel</li>
+<li>Approche secondaire : Org mode comme système GTD</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org9b8fc00">
+<h3 id="org9b8fc00">Interactivité</h3>
+<ul>
+<li>Le meetup sera suivi d&rsquo;une session de questions / réponses</li>
+<li>Les questions peuvent être posées dans le chat à tout moment</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org67f9d9a">
+<h3 id="org67f9d9a">Et la suite ?</h3>
+<p>
+L&rsquo;Urfist Bordeaux organisera durant l&rsquo;année 2021/2022 deux formations sur Org mode :
+</p>
+<ol>
+<li>Utiliser Org-mode pour s&rsquo;organiser, prendre des notes, rédiger des articles scientifiques.</li>
+<li>Prise des notes académiques : introduction à la méthode Zettelkasten avec Org-Roam.</li>
+
+</ol>
+
+</section>
+</section>
+<section>
+<section id="slide-org1185222">
+<h2 id="org1185222"><span class="section-number-2">1</span> Emacs</h2>
+<div class="org-center">
+
+<div id="org80d1949" class="figure">
+<p><img src="./images/splash.png" alt="splash.png" />
+</p>
+</div>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org5cb544e">
+<h3 id="org5cb544e"><span class="section-number-3">1.1</span> Pourquoi travailler en texte brut ?</h3>
+<ul>
+<li>Portable</li>
+<li>Durable</li>
+<li>Aisé à versionner (git, svn)</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgf0dfb0a">
+<h3 id="orgf0dfb0a"><span class="section-number-3">1.2</span> Historique</h3>
+<ul>
+<li>Développé dans les années 1980 par Richard Stallman à partir du logiciel propriétaire Gosling Emacs</li>
+<li>Logiciel libre, disponible pour tous les OS</li>
+<li>Codé en langages C et Emacs Lisp</li>
+<li>Est actuellement dans sa version 27.2</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org4ac6d97">
+<h3 id="org4ac6d97"><span class="section-number-3">1.3</span> Philosophie emacsienne</h3>
+<p>
+Idée phare : rendre l&rsquo;utilisateur totalement maître de son environnement de travail.
+</p>
+
+<p>
+À cette fin, Emacs se décrit comme <i>&ldquo;extensible, customizable and self-documenting&rdquo;</i> :
+</p>
+
+<ul>
+<li><b>Extensible</b> : offre le langage Emacs Lisp comme langage d&rsquo;extension. Il existe aujourd&rsquo;hui plus de 5200 extensions Emacs sur le dépôt Melpa, offrant des fonctionnalités supplémentaires.</li>
+<li><b>Personnalisable</b> : très puissamment personnalisable via un <i>fichier d&rsquo;initialisation</i> où l&rsquo;on peut redéfinir n&rsquo;importe quel paramètre ou variable du logiciel, et ajouter de nouveaux comportements. Deux utilisateurs d&rsquo;Emacs n&rsquo;auront jamais le même Emacs.</li>
+<li><b>Documenté</b> : tutoriel, nombreux manuels très touffus, communauté d&rsquo;utilisateurs sur Stackoverflow, aide intégrée dans le logiciel.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orge56e739">
+<h3 id="orge56e739"><span class="section-number-3">1.4</span> Aperçu des fonctionnalités</h3>
+
+<div id="org86392eb" class="figure">
+<p><img src="./images/avalanche.gif" alt="avalanche.gif" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgca8c04e">
+<h4 id="orgca8c04e"><span class="section-number-4">1.4.1</span> Éditeur de texte brut</h4>
+
+<div id="org1ac68e3" class="figure">
+<p><img src="./images/texte-brut.png" alt="texte-brut.png" />
+</p>
+</div>
+
+<p>
+(Noter la présence d&rsquo;un correcteur orthographique.)
+</p>
+
+</section>
+<section id="slide-org8fe3d17">
+<h4 id="org8fe3d17"><span class="section-number-4">1.4.2</span> Éditeur LaTeX</h4>
+<p>
+AUCTeX : un mode LaTeX très performant (avec prévisualisation WYSIWYG).
+</p>
+
+
+<div id="orgf6f1484" class="figure">
+<p><img src="./images/exemple-latex.png" alt="exemple-latex.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-org0ef00a3">
+<h4 id="org0ef00a3"><span class="section-number-4">1.4.3</span> Éditeur de langages de balisage</h4>
+<ul>
+<li>Des modes HTML et CSS</li>
+<li>Un mode markdown</li>
+
+</ul>
+
+
+<div id="org3a67957" class="figure">
+<p><img src="./images/exemple-html.png" alt="exemple-html.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgba4bbd8">
+<h4 id="orgba4bbd8"><span class="section-number-4">1.4.4</span> Visionneuse d&rsquo;images</h4>
+
+<div id="orgcac6e43" class="figure">
+<p><img src="./images/exemple-image.png" alt="exemple-image.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-orge71f75e">
+<h4 id="orge71f75e"><span class="section-number-4">1.4.5</span> Visionneuse PDF</h4>
+
+<div id="org0b6a09d" class="figure">
+<p><img src="./images/exemple-pdf.png" alt="exemple-pdf.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-org6833d3a">
+<h4 id="org6833d3a"><span class="section-number-4">1.4.6</span> Éditeur de script</h4>
+<p>
+Ici, un exemple de script bash :
+</p>
+
+
+<div id="org68fcc3a" class="figure">
+<p><img src="./images/exemple-script.png" alt="exemple-script.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-org3c5e5be">
+<h4 id="org3c5e5be"><span class="section-number-4">1.4.7</span> Emacs en tant qu&rsquo;EDI</h4>
+<p>
+Un exemple de configuration d&rsquo;Emacs en tant qu&rsquo;EDI pour le langage R :
+<img src="./images/exemple-ide-R.png" alt="exemple-ide-R.png" />
+</p>
+
+</section>
+<section id="slide-orga624913">
+<h4 id="orga624913"><span class="section-number-4">1.4.8</span> Versionnement</h4>
+<ul>
+<li>Offre un mode de versionnement natif (prise en charge de Git ou SVN)</li>
+<li>Un package additionnel, Magit, offre le meilleur client Git actuel</li>
+<li>Comparaison aisée des versions avec <code>ediff</code></li>
+
+</ul>
+
+
+<div id="org296cb12" class="figure">
+<p><img src="./images/exemple-ediff.png" alt="exemple-ediff.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgfdbc734">
+<h4 id="orgfdbc734"><span class="section-number-4">1.4.9</span> Gestionnaire de fichiers</h4>
+
+<div id="org346a51b" class="figure">
+<p><img src="./images/exemple-dired.png" alt="exemple-dired.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgdc76165">
+<h4 id="orgdc76165"><span class="section-number-4">1.4.10</span> Client mail et fonctionnalités web</h4>
+
+<div id="orgf8606de" class="figure">
+<p><img src="./images/exemple-mu4e.png" alt="exemple-mu4e.png" />
+</p>
+</div>
+
+<p>
+Emacs inclut aussi un navigateur web basique (en mode texte), un client IRC, &#x2026;
+</p>
+
+</section>
+<section id="slide-org81696b1">
+<h4 id="org81696b1"><span class="section-number-4">1.4.11</span> Psychothérapeute</h4>
+<p>
+Emacs a un mode <code>doctor</code> intégré pour une psychothérapie en mode texte.
+</p>
+
+
+<div id="org88704fc" class="figure">
+<p><img src="./images/exemple-doctor.png" alt="exemple-doctor.png" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org636fd32">
+<h3 id="org636fd32"><span class="section-number-3">1.5</span> Mais alors, Emacs peut tout faire ?</h3>
+
+<div id="org0689139" class="figure">
+<p><img src="./images/wow_owl.gif" alt="wow_owl.gif" />
+</p>
+</div>
+
+<p class="fragment roll-in">
+Ben oui.
+</p>
+
+<p class="fragment roll-in">
+(Un utilisateur avancé d&rsquo;Emacs aura tendance à &ldquo;vivre dans Emacs&rdquo; et à réaliser la quasi-totalité de ses tâches informatiques directement dans ce logiciel.)
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org365a91b">
+<h2 id="org365a91b"><span class="section-number-2">2</span> Org mode</h2>
+
+<div id="org5763849" class="figure">
+<p><img src="./images/org-mode.jpg" alt="org-mode.jpg" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgacaa368">
+<h3 id="orgacaa368"><span class="section-number-3">2.1</span> Un mode d&rsquo;Emacs pour &ldquo;organiser sa vie en texte brut&rdquo;</h3>
+<ul>
+<li>Clairement l&rsquo;une des fonctionnalités phares d&rsquo;Emacs.</li>
+<li>Créé par Carsten Dominik en 2003, initialement comme un système avancé de prise de notes et de classement de l&rsquo;information.</li>
+<li>Org mode a ensuite été considérablement étendu pour inclure un agenda, un gestionnaire de tâches, un chronométrage des tâches, &#x2026;</li>
+<li>C&rsquo;est aujourd&rsquo;hui un système compatible <i>GTD</i>.</li>
+
+</ul>
+
+
+<div id="orgead54f4" class="figure">
+<p><img src="./images/gtd.png" alt="gtd.png" class="fragment roll-in" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org1a43935">
+<h3 id="org1a43935"><span class="section-number-3">2.2</span> Un moteur d&rsquo;export universel</h3>
+<ul>
+<li>Org mode est aussi un langage de balisage léger, similaire à (mais plus avancé que) Markdown.</li>
+<li>Dispose de fonctionnalités avancées d&rsquo;export vers de nombreux formats (html, odt, pdf/tex, pdf/beamer, reveal.js, &#x2026;) grâce à son moteur <i>natif</i> d&rsquo;export (pas besoin de <code>pandoc</code>).</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgc42edb3">
+<h2 id="orgc42edb3"><span class="section-number-2">3</span> Org-babel</h2>
+<ul>
+<li>Étend Org mode en système de programmation lettrée.</li>
+<li>Gère plus de 50 langages (Bash, C/C++, Matlab, Octave, Perl, Python, R, &#x2026;).</li>
+<li>Permet de passer des variables aisément d&rsquo;un langage à l&rsquo;autre.</li>
+<li>Permet de combiner une interface de type <i>notebook</i> avec toutes les fonctions <i>GTD</i> proposées par Org-mode.</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<p> Créé par Frédéric Santos </p>
+<script src="/home/fsantos/PACEA_MyCore/Logiciels/reveal_js/dist/reveal.js"></script>
+<script src="/home/fsantos/PACEA_MyCore/Logiciels/reveal_js/plugin/markdown/markdown.js"></script>
+<script src="/home/fsantos/PACEA_MyCore/Logiciels/reveal_js/plugin/zoom/zoom.js"></script>
+<script src="/home/fsantos/PACEA_MyCore/Logiciels/reveal_js/plugin/notes/notes.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+plugins: [RevealMarkdown,RevealZoom,RevealNotes],
+width:1650, height:950, margin: 0.1, minScale:0.2, maxScale:2.5, transition:'fade', slideNumber:'c/t',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+]
+});
+
+
+</script>
+</body>
+</html>

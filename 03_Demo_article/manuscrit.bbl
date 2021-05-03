@@ -1,0 +1,64 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Aczel%
+\ \protect \BOthers {.}}{%
+Aczel%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+aczel2020_DiscussionPointsBayesian}
+\APACinsertmetastar {%
+aczel2020_DiscussionPointsBayesian}%
+\begin{APACrefauthors}%
+Aczel, B.%
+, Hoekstra, R.%
+, Gelman, A.%
+, Wagenmakers, E\BHBI J.%
+, Klugkist, I\BPBI G.%
+, Rouder, J\BPBI N.%
+\BDBL {}van Ravenzwaaij, D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Discussion Points for {{Bayesian}} Inference}
+  {Discussion points for {{Bayesian}} inference}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Nature Human Behaviour}{}{}{1--3}.
+\newblock
+\begin{APACrefDOI} 10.1038/s41562-019-0807-z \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Adams%
+\ \BBA {} Collyer%
+}{%
+Adams%
+\ \BBA {} Collyer%
+}{%
+{\protect \APACyear {2019}}%
+}]{%
+adams2019_PhylogeneticComparativeMethods}
+\APACinsertmetastar {%
+adams2019_PhylogeneticComparativeMethods}%
+\begin{APACrefauthors}%
+Adams, D\BPBI C.%
+\BCBT {}\ \BBA {} Collyer, M\BPBI L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Phylogenetic {{Comparative Methods}} and the
+  {{Evolution}} of {{Multivariate Phenotypes}}} {Phylogenetic {{Comparative
+  Methods}} and the {{Evolution}} of {{Multivariate Phenotypes}}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Annual Review of Ecology, Evolution, and
+  Systematics}{50}{1}{annurev-ecolsys-110218-024555}.
+\newblock
+\begin{APACrefDOI} 10.1146/annurev-ecolsys-110218-024555 \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

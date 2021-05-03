@@ -1,0 +1,73 @@
+#+TITLE: pacmanUB : un clone de pacman made in Bordeaux
+#+AUTHOR: Frédéric Santos
+#+LANGUAGE: fr
+#+SETUPFILE: ~/PACEA_MyCore/Logiciels/Emacs/org-html-themes/org/theme-readtheorg.setup
+#+LATEX_HEADER: \usepackage{mathpazo}
+#+LATEX_HEADER: \usepackage[natbibapa]{apacite}
+#+OPTIONS: todo:nil
+
+* Présentation du logiciel
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec hendrerit tempor tellus.  Donec pretium posuere tellus.  Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.  Nulla posuere.  Donec vitae dolor.  Nullam tristique diam non turpis.  Cras placerat accumsan nulla.  Nullam rutrum.  Nam vestibulum accumsan nisl.
+
+* Installation
+** Linux
+** Mac OS
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec hendrerit tempor tellus.  Donec pretium posuere tellus.  Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.  Nulla posuere.  Donec vitae dolor.  Nullam tristique diam non turpis.  Cras placerat accumsan nulla.  Nullam rutrum.  Nam vestibulum accumsan nisl.
+
+** Windows
+*** Windows 7
+- Télécharger
+- Décompresser
+- Installer
+
+*** Windows 10
+1. Télécharger
+2. Décompresser
+3. Installer
+
+* Comparaison avec d'autres logiciels
+Les autres Pacman disponibles sont décrits en table ref:tab-concurrence.
+
+#+CAPTION: Les implémentations de Pacman. label:tab-concurrence
+|------------------+-------------+------|
+| Logiciels        | OS          | Prix |
+|------------------+-------------+------|
+| pacmanUB         | Tous les OS |   19 |
+| pacTux           | Linux       |    0 |
+| pacWin           | Windows     |   29 |
+| iPac             | MacOS       |   99 |
+|------------------+-------------+------|
+| Toute la collec' |             |  147 |
+|------------------+-------------+------|
+
+* TODO Captures d'écran
+  :LOGBOOK:
+  - Note taken on [2021-05-03 lun. 11:22] \\
+    - Ajouter des captures pour la version Windows
+    - ...
+  :END:
+Des extraits du jeu en figure ref:fig-capture.
+
+#+CAPTION: Une capture de la version Linux. label:fig-capture
+[[./pacman.jpg]]
+
+* Algorithme
+Les déplacements des fantômes obéissent à des formules compliquées : $\cos(\phi + \pi) = \xi/6$ cite:tao2016_AnalysisII.
+
+* Développements futurs pour la v2
+
+** DONE Musique [3/3]
+   CLOSED: [2021-05-03 lun. 11:31] DEADLINE: <2021-05-07 ven.>
+- [X] Country
+- [X] Punk
+- [X] Rock
+
+** TODO Documentation
+   DEADLINE: <2021-05-06 jeu.>
+
+** TODO Interface
+   DEADLINE: <2021-05-10 lun.>
+
+* Biblio :ignore:
+bibliography:~/PACEA_MyCore/complete_biblio.bib
+bibliographystyle:apacite

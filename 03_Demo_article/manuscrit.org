@@ -1,0 +1,135 @@
+#+LATEX_CLASS: WileyNJD-v2
+#+LATEX_CLASS_OPTIONS: [APA,LATO1COL]
+#+LATEX_HEADER: \articletype{Article Type}%
+#+LATEX_HEADER: \received{3 May 2021}
+#+LATEX_HEADER: \revised{}
+#+LATEX_HEADER: \accepted{}
+#+LATEX_HEADER: \raggedbottom
+#+OPTIONS: author:nil date:nil title:nil toc:nil todo:nil tags:nil
+
+* Arrière-boutique                                                   :ignore:
+** DONE Chercher des reviewers à suggérer                          :noexport:
+   CLOSED: [2021-04-26 lun. 16:35]
+- Monsieur Bidule
+- Madame Chose
+- Madame Truc
+
+** DONE Frontmatter LaTeX                                            :ignore:
+   CLOSED: [2021-04-26 lun. 16:36]
+#+begin_export latex
+\title{My great article made with Org mode}
+
+%% Running head (abbreviated title):
+%% rdss: an R package for Murail et al.'s approach of sex estimation
+
+\author[1]{Frédéric Santos}
+\author[2]{Toto Sursonchameau}
+
+\authormark{Santos et Sursonchameau}
+
+\address{\orgname{Université de Bordeaux --- CNRS --- MCC},
+  \orgdiv{UMR 5199 PACEA}, \orgaddress{33600 Pessac,
+    \country{France}}}
+
+\corres{Frédéric Santos, Université de Bordeaux, UMR 5199 PACEA,
+  Bâtiment B8, Allée Geoffroy Saint-Hilaire, CS 50023, 33615 Pessac
+  Cedex, France. \email{frederic.santos@u-bordeaux.fr}}
+
+\abstract[Summary]{Nullam eu ante vel est convallis dignissim. Fusce
+  suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis
+  tempor ligula erat quis odio. Nunc porta vulputate tellus. Nunc
+  rutrum turpis sed pede. Sed bibendum. Aliquam posuere. Nunc aliquet,
+  augue nec adipiscing interdum, lacus tellus malesuada massa, quis
+  varius mi purus non odio. Pellentesque condimentum, magna ut
+  suscipit hendrerit, ipsum augue ornare nulla, non luctus diam neque
+  sit amet urna. Curabitur vulputate vestibulum lorem. Fusce sagittis,
+  libero non molestie mollis, magna orci ultrices dolor, at vulputate
+  neque nulla lacinia eros. Sed id ligula quis est convallis tempor.
+  Curabitur lacinia pulvinar nibh. Nam a sapien.}
+
+\keywords{archaeological samples, machine learning, R language, sex
+  estimation}
+
+\jnlcitation{\cname{%
+\author{F. Santos and T. Sursonchameau}, 
+} (\cyear{2021}), 
+\ctitle{My great article made with Org mode},
+\cjournal{Int. J. Osteo.}, \cvol{2021;00:1--10}.}
+
+\maketitle
+#+end_export
+
+* DONE Introduction
+  CLOSED: [2021-04-28 mer. 16:51]
+** WAITING A new method for sex estimation                    :toto:frederic:
+   :LOGBOOK:
+- State "WAITING"    from "IN-PROGRESS" [2021-04-26 lun. 16:56] \\
+  On attend de pouvoir récupérer un livre en PEB pour l'insérer en référence
+   :END:
+Pellentesque dapibus suscipit ligula.  Donec posuere augue in quam.  Etiam vel tortor sodales tellus ultricies commodo.  Suspendisse potenti.  Aenean in sem ac leo mollis blandit.  Donec neque quam, dignissim in, mollis nec, sagittis eu, wisi.  Phasellus lacus.  Etiam laoreet quam sed arcu.  Phasellus at dui in ligula mollis ultricies.  Integer placerat tristique nisl.  Praesent augue.  Fusce commodo.  Vestibulum convallis, lorem a tempus semper, dui dui euismod elit, vitae placerat urna tortor vitae lacus.  Nullam libero mauris, consequat quis, varius et, dictum id, arcu.  Mauris mollis tincidunt felis.  Aliquam feugiat tellus ut neque.  Nulla facilisis, risus a rhoncus fermentum, tellus tellus lacinia purus, et dictum nunc justo sit amet elit.
+
+** DONE Inserting references                                           :toto:
+   CLOSED: [2021-04-26 lun. 16:54]
+According to cite:adams2019_PhylogeneticComparativeMethods... But this is false according to another recent study citep:aczel2020_DiscussionPointsBayesian.
+
+* IN-PROGRESS Materials and methods
+Nullam eu ante vel est convallis dignissim.  Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio.  Nunc porta vulputate tellus.  Nunc rutrum turpis sed pede.  Sed bibendum.  Aliquam posuere.  Nunc aliquet, augue nec adipiscing interdum, lacus tellus malesuada massa, quis varius mi purus non odio.  Pellentesque condimentum, magna ut suscipit hendrerit, ipsum augue ornare nulla, non luctus diam neque sit amet urna.  Curabitur vulputate vestibulum lorem.  Fusce sagittis, libero non molestie mollis, magna orci ultrices dolor, at vulputate neque nulla lacinia eros.  Sed id ligula quis est convallis tempor.  Curabitur lacinia pulvinar nibh.  Nam a sapien.
+
+** DONE Population samples                                             :toto:
+   CLOSED: [2021-04-26 lun. 16:55]
+The material is exhaustively described in Table ref:tab-material.
+
+#+CAPTION: An example of table. label:tab-material
+|------------+-------------------+-----------------|
+| Population | Number of females | Number of males |
+|------------+-------------------+-----------------|
+| Sayala     |                15 |              12 |
+| Coimbra    |                20 |              25 |
+| London     |                10 |              16 |
+|------------+-------------------+-----------------|
+
+** IN-PROGRESS Statistical analysis                                :frederic:
+   DEADLINE: <2021-05-06 jeu.>
+Aliquam erat volutpat.  Nunc eleifend leo vitae magna.  In id erat non orci commodo lobortis.  Proin neque massa, cursus ut, gravida ut, lobortis eget, lacus.  Sed diam.  Praesent fermentum tempor tellus.  Nullam tempus.  Mauris ac felis vel velit tristique imperdiet.  Donec at pede.  Etiam vel neque nec dui dignissim bibendum.  Vivamus id enim.  Phasellus neque orci, porta a, aliquet quis, semper a, massa.  Phasellus purus.  Pellentesque tristique imperdiet tortor.  Nam euismod tellus id erat.
+
+* IN-PROGRESS Results                                              :frederic:
+  DEADLINE: <2021-05-07 ven.>
+Aliquam erat volutpat.  Nunc eleifend leo vitae magna.  In id erat non orci commodo lobortis.  Proin neque massa, cursus ut, gravida ut, lobortis eget, lacus.  Sed diam.  Praesent fermentum tempor tellus.  Nullam tempus.  Mauris ac felis vel velit tristique imperdiet.  Donec at pede.  Etiam vel neque nec dui dignissim bibendum.  Vivamus id enim.  Phasellus neque orci, porta a, aliquet quis, semper a, massa.  Phasellus purus.  Pellentesque tristique imperdiet tortor.  Nam euismod tellus id erat.
+
+See Figure ref:fig-scatterplot for more details.
+
+#+begin_src R :results graphics file :file figures/scatterplot.png :exports results :width 600 :height 400 :session *R*
+data(iris)
+par(cex = 1.1)
+plot(Sepal.Width ~ Sepal.Length, col = "purple",
+     pch = 16, data = iris, main = "My plot with R")
+#+end_src
+
+#+CAPTION: A figure. label:fig-scatterplot
+#+ATTR_LATEX: :width 0.6 \textwidth
+#+RESULTS:
+[[file:figures/scatterplot.png]]
+
+* IN-PROGRESS Discussion                                               :toto:
+  DEADLINE: <2021-05-10 lun.>
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec hendrerit tempor tellus.  Donec pretium posuere tellus.  Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.  Nulla posuere.  Donec vitae dolor.  Nullam tristique diam non turpis.  Cras placerat accumsan nulla.  Nullam rutrum.  Nam vestibulum accumsan nisl.
+
+* DONE Conclusion                                             :toto:frederic:
+  CLOSED: [2021-04-29 jeu. 16:58]
+Aliquam erat volutpat.  Nunc eleifend leo vitae magna.  In id erat non orci commodo lobortis.  Proin neque massa, cursus ut, gravida ut, lobortis eget, lacus.  Sed diam.  Praesent fermentum tempor tellus.  Nullam tempus.  Mauris ac felis vel velit tristique imperdiet.  Donec at pede.  Etiam vel neque nec dui dignissim bibendum.  Vivamus id enim.  Phasellus neque orci, porta a, aliquet quis, semper a, massa.  Phasellus purus.  Pellentesque tristique imperdiet tortor.  Nam euismod tellus id erat.
+
+* Bibliography                                                       :ignore:
+#+begin_export latex
+% \nocite{*}% Show all bib entries - both cited and uncited; comment this line to view only cited bib entries;
+\bibliography{biblio}%
+#+end_export
+
+* Emacs config                                                     :noexport:
+bibliography:biblio.bib
+
+;;; Local variables:
+;;; org-export-with-title:nil
+;;; org-export-with-author:nil
+;;; org-export-with-date:nil
+;;; org-latex-default-packages-alist:nil
+;;; End:

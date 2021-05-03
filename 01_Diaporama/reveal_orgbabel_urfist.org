@@ -1,0 +1,145 @@
+#+TITLE: Une introduction à Emacs et Org mode
+#+AUTHOR: Frédéric Santos
+#+EMAIL: frederic.santos@u-bordeaux.fr
+#+DATE: Lundi 3 mai 2021
+#+REVEAL_INIT_OPTIONS: width:1650, height:950, margin: 0.1, minScale:0.2, maxScale:2.5, transition:'fade', slideNumber:'c/t'
+#+OPTIONS: toc:nil email:t timestamp:nil reveal_global_header:t
+#+REVEAL_THEME: sky
+#+REVEAL_HLEVEL: 2
+#+REVEAL_HEAD_PREAMBLE: <meta name="description" content="Une introduction à Emacs et Org mode.">
+#+REVEAL_POSTAMBLE: <p> Créé par Frédéric Santos </p>
+
+* Organisation du meetup
+  :PROPERTIES:
+  :UNNUMBERED: t
+  :END:
+** Programme
+- (Re)découverte d'Emacs
+- Généralités sur Org mode
+- Démo : rédiger un document Org et l'exporter en de multiples formats
+- Démo : un exemple simple d'utilisation d'Org mode comme "planificateur du quotidien"
+
+** Approche
+- Approche principale : Org mode comme langage de balisage léger, et système d'export universel
+- Approche secondaire : Org mode comme système GTD
+
+** Interactivité
+- Le meetup sera suivi d'une session de questions / réponses
+- Les questions peuvent être posées dans le chat à tout moment
+
+** Et la suite ?
+L'Urfist Bordeaux organisera durant l'année 2021/2022 deux formations sur Org mode :
+1. Utiliser Org-mode pour s'organiser, prendre des notes, rédiger des articles scientifiques.
+2. Prise des notes académiques : introduction à la méthode Zettelkasten avec Org-Roam.
+
+* Emacs
+
+#+begin_center
+[[./images/splash.png]]
+#+end_center
+
+** Pourquoi travailler en texte brut ?
+- Portable
+- Durable
+- Aisé à versionner (git, svn)
+
+** Historique
+- Développé dans les années 1980 par Richard Stallman à partir du logiciel propriétaire Gosling Emacs
+- Logiciel libre, disponible pour tous les OS
+- Codé en langages C et Emacs Lisp
+- Est actuellement dans sa version 27.2
+
+** Philosophie emacsienne
+Idée phare : rendre l'utilisateur totalement maître de son environnement de travail.
+
+À cette fin, Emacs se décrit comme /"extensible, customizable and self-documenting"/ :
+
+- *Extensible* : offre le langage Emacs Lisp comme langage d'extension. Il existe aujourd'hui plus de 5200 extensions Emacs sur le dépôt Melpa, offrant des fonctionnalités supplémentaires.
+- *Personnalisable* : très puissamment personnalisable via un /fichier d'initialisation/ où l'on peut redéfinir n'importe quel paramètre ou variable du logiciel, et ajouter de nouveaux comportements. Deux utilisateurs d'Emacs n'auront jamais le même Emacs.
+- *Documenté* : tutoriel, nombreux manuels très touffus, communauté d'utilisateurs sur Stackoverflow, aide intégrée dans le logiciel.
+
+** Aperçu des fonctionnalités
+[[./images/avalanche.gif]]
+
+*** Éditeur de texte brut
+[[./images/texte-brut.png]]
+
+(Noter la présence d'un correcteur orthographique.)
+
+*** Éditeur LaTeX
+AUCTeX : un mode LaTeX très performant (avec prévisualisation WYSIWYG).
+
+[[./images/exemple-latex.png]]
+
+*** Éditeur de langages de balisage
+- Des modes HTML et CSS
+- Un mode markdown
+
+[[./images/exemple-html.png]]
+
+*** Visionneuse d'images
+[[./images/exemple-image.png]]
+
+*** Visionneuse PDF
+[[./images/exemple-pdf.png]]
+
+*** Éditeur de script
+Ici, un exemple de script bash :
+
+[[./images/exemple-script.png]]
+
+*** Emacs en tant qu'EDI
+Un exemple de configuration d'Emacs en tant qu'EDI pour le langage R :
+[[./images/exemple-ide-R.png]]
+
+*** Versionnement
+- Offre un mode de versionnement natif (prise en charge de Git ou SVN)
+- Un package additionnel, Magit, offre le meilleur client Git actuel
+- Comparaison aisée des versions avec ~ediff~
+
+[[./images/exemple-ediff.png]]
+
+*** Gestionnaire de fichiers
+[[./images/exemple-dired.png]]
+
+*** Client mail et fonctionnalités web
+[[./images/exemple-mu4e.png]]
+
+Emacs inclut aussi un navigateur web basique (en mode texte), un client IRC, ...
+
+*** Psychothérapeute
+Emacs a un mode ~doctor~ intégré pour une psychothérapie en mode texte.
+
+[[./images/exemple-doctor.png]]
+
+** Mais alors, Emacs peut tout faire ?
+[[./images/wow_owl.gif]]
+
+#+ATTR_REVEAL: :frag roll-in
+Ben oui.
+
+#+ATTR_REVEAL: :frag roll-in
+(Un utilisateur avancé d'Emacs aura tendance à "vivre dans Emacs" et à réaliser la quasi-totalité de ses tâches informatiques directement dans ce logiciel.)
+* Org mode
+
+[[./images/org-mode.jpg]]
+
+** Un mode d'Emacs pour "organiser sa vie en texte brut"
+- Clairement l'une des fonctionnalités phares d'Emacs.
+- Créé par Carsten Dominik en 2003, initialement comme un système avancé de prise de notes et de classement de l'information.
+- Org mode a ensuite été considérablement étendu pour inclure un agenda, un gestionnaire de tâches, un chronométrage des tâches, ...
+- C'est aujourd'hui un système compatible /GTD/.
+
+#+ATTR_REVEAL: :frag roll-in
+[[./images/gtd.png]]
+
+** Un moteur d'export universel
+- Org mode est aussi un langage de balisage léger, similaire à (mais plus avancé que) Markdown.
+- Dispose de fonctionnalités avancées d'export vers de nombreux formats (html, odt, pdf/tex, pdf/beamer, reveal.js, ...) grâce à son moteur /natif/ d'export (pas besoin de ~pandoc~).
+
+* Org-babel
+- Étend Org mode en système de programmation lettrée.
+- Gère plus de 50 langages (Bash, C/C++, Matlab, Octave, Perl, Python, R, ...).
+- Permet de passer des variables aisément d'un langage à l'autre.
+- Permet de combiner une interface de type /notebook/ avec toutes les fonctions /GTD/ proposées par Org-mode.
+

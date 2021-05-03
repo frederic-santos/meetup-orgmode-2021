@@ -1,0 +1,27 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Tao%
+}{%
+Tao%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+tao2016_AnalysisII}
+\APACinsertmetastar {%
+tao2016_AnalysisII}%
+\begin{APACrefauthors}%
+Tao, T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2016}.
+\newblock
+\APACrefbtitle {Analysis {{II}}} {Analysis {{II}}}\ (\BVOL~38).
+\newblock
+\APACaddressPublisher{{Singapore}}{{Springer Singapore}}.
+\newblock
+\begin{APACrefDOI} \doi{10.1007/978-981-10-1804-6} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}
